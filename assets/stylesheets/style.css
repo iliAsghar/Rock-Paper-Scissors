@@ -1,1 +1,63 @@
 @import url(./reset.css);
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Playwrite+HU:wght@100..400&display=swap');
+
+:root {
+  
+}
+
+body {
+  max-height: 100%;
+  /* overflow: hidden; */
+}
+
+.hero {
+  height: 100dvh;
+
+  background: #649173;
+  background: -webkit-linear-gradient(to bottom, #DBD5A4, #649173);
+  background: linear-gradient(to bottom, #DBD5A4, #649173);
+
+  display: grid;
+  place-items: center;
+
+  position: relative;
+}
+
+.hero__title {
+  font-family: "Playwrite HU";
+  font-size: 10rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  text-shadow: 0px -4px 4px rgba(0, 0, 0, 0.164);
+  user-select: none;
+}
+
+.hero__start-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 2rem;
+  color: rgb(187, 208, 183);
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.789);
+
+  position: absolute;
+  bottom: 5rem;
+
+  transition: all ease-in-out 100ms;
+}
+
+.hero__start-btn:hover {
+  color: rgb(255, 255, 255);
+}
+
+.hero__start-btn:active {
+  color: #c9d7ce;
+
+  transition: all ease-in-out 10ms;
+}
