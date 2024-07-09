@@ -9,11 +9,22 @@
 
 body {
   max-height: 100%;
+  position: relative;
   /* overflow: hidden; */
 }
 
+.header {
+  position: fixed;
+  background-color: rgb(49, 10, 10);
+  top: 0;
+  width: 100%;
+  padding: 1rem 3rem;
+
+  z-index: 999;
+}
+
 .hero {
-  height: 100dvh;
+  height: 90dvh;
 
   background: #649173;
   background: -webkit-linear-gradient(to bottom, #DBD5A4, #649173);
@@ -27,7 +38,7 @@ body {
 
 .hero__title {
   font-family: "Playwrite HU";
-  font-size: 10rem;
+  font-size: clamp(6rem, 11vw + 1rem, 10rem);
   font-weight: bold;
   text-align: center;
   color: white;
@@ -35,9 +46,19 @@ body {
   user-select: none;
 }
 
-.hero__start-btn {
+.board {
+  position: relative;
+  display: grid;
+  display: flex;
+  flex-direction: column;
+
+  background-color: rgb(81, 79, 79);
+  padding: 0 0 1rem;
+}
+
+.board__start-btn {
   border: none;
-  background-color: transparent;
+  background-color: rgb(36, 49, 37);
   cursor: pointer;
 
   font-family: "Poppins";
@@ -46,18 +67,73 @@ body {
   color: rgb(187, 208, 183);
   text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.789);
 
-  position: absolute;
-  bottom: 5rem;
+  width: 100%;
+  height: 10dvh;
+  /* position: absolute; */
+  /* top: 1.5rem;
+  left: 50%;
+  translate: -50%; */
 
   transition: all ease-in-out 100ms;
 }
 
-.hero__start-btn:hover {
+.board__start-btn:hover {
   color: rgb(255, 255, 255);
 }
 
-.hero__start-btn:active {
+.board__start-btn:active {
   color: #c9d7ce;
 
   transition: all ease-in-out 10ms;
+}
+
+.game {
+  position: relative;
+  display: flex;
+  
+  padding: 6rem 10rem;
+  /* height: 100dvh; */
+}
+
+.game__player-side,
+.game__computer-side {
+  width: 100%;
+  /* height: 20px; ! remove */
+  background-color: darkslategray;
+
+  display: grid;
+  place-items: center;
+}
+
+.game__choice-btn {
+  background-color: white;
+  font-size: 10rem;
+  width: 15rem;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  outline: none;
+  border: none;
+  display: grid;
+  place-items: center;
+  cursor:no-drop;
+
+  transition: all ease-in-out 100ms;
+}
+
+.game__choice-btn--player {
+  cursor: pointer;
+}
+
+.game__choice-btn--player:hover {
+  background-color: red;
+}
+
+
+.game__choice-btn ~ .game__choice-btn {
+  margin-top: 2rem;
+}
+
+.game__result {
+  position: absolute;
+  display: none;
 }

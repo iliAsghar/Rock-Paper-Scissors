@@ -6,26 +6,51 @@
   <title>Rock-Paper-Scissors!</title>
   <link rel="stylesheet" href="./assets/stylesheets/style.css">
   <link rel="shortcut icon" href="./images/icons/icon.webp" type="image/x-icon">
+
+  <script src="https://kit.fontawesome.com/81541dc3f8.js" crossorigin="anonymous"></script>
   <script src="./assets/scripts/script.js" defer></script>
 </head>
 <body>
+  <header class="header">header</header>
   <div class="hero">
     <h1 class="hero__title">Rock! <br> Paper! <br> Scissors!</h1>
-    <button class="hero__start-btn">▼Start Game▼</button>
   </div>
   <div class="board">
-    <div class="board__game-result">
-      <div class="board__game-result__player">
-        <p>Player</p>
-        <img src="" alt="player-choice">
+    <button class="board__start-btn">▼Start Game▼</button>
+    <div class="game">
+      <div class="game__result">
+        <div class="game__result--player">
+          <p>Player</p>
+          <img src="" alt="player-choice">
+        </div>
+        <div class="game__result--computer">
+          <p>Computer</p>
+          <img src="" alt="computer-choice">
+        </div>
       </div>
-      <div class="board__game-result__computer">
-        <p>Computer</p>
-        <img src="" alt="computer-choice">
+      <div class="game__player-side">
+        <button class="game__choice-btn game__choice-btn--player">
+          <i class="fa-solid fa-hand-back-fist fa-flip-horizontal"></i>
+        </button>
+        <button class="game__choice-btn game__choice-btn--player">
+          <i class="fa-solid fa-hand"></i>
+        </button>
+        <button class="game__choice-btn game__choice-btn--player">
+          <i class="fa-solid fa-hand-scissors fa-flip-horizontal"></i>
+        </button>
+      </div>
+      <div class="game__computer-side">
+        <div class="game__choice-btn">
+          <i class="fa-solid fa-hand-back-fist"></i>
+        </div>
+        <div class="game__choice-btn">
+          <i class="fa-solid fa-hand fa-flip-horizontal"></i>
+        </div>
+        <div class="game__choice-btn">
+          <i class="fa-solid fa-hand-scissors"></i>
+        </div>
       </div>
     </div>
-    <div class="board__player-side"></div>
-    <div class="board__computer-side"></div>
   </div>
 </body>
 </html>
