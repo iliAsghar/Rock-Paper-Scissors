@@ -8,7 +8,7 @@
   <link rel="shortcut icon" href="./images/icons/icon.webp" type="image/x-icon">
 
   <script src="https://kit.fontawesome.com/81541dc3f8.js" crossorigin="anonymous"></script>
-  <script src="./assets/scripts/script.js" defer></script>
+  <script src="./assets/scripts/script.js" type="module" defer></script>
 </head>
 <body>
   
@@ -23,34 +23,34 @@
         <div class="game__player-side">
           <div class="game__player-icon"><i class="fa-solid fa-user"></i></div>
           <div class="game__buttons">
-            <button class="game__choice-btn game__choice-btn--player">
+            <button data-move="rock" class="game__choice-btn game__choice-btn--player">
               <i class="fa-solid fa-hand-back-fist"></i>
             </button>
-            <button class="game__choice-btn game__choice-btn--player">
+            <button data-move="paper" class="game__choice-btn game__choice-btn--player">
               <i class="fa-solid fa-hand"></i>
             </button>
-            <button class="game__choice-btn game__choice-btn--player">
+            <button data-move="scissors" class="game__choice-btn game__choice-btn--player">
               <i class="fa-solid fa-hand-scissors fa-flip-horizontal"></i>
             </button>
           </div>
         </div>
         <div class="game__result">
           <p>
-            <span class="player-score">12</span>
+            <span class="player-score">0</span>
             -
-            <span class="computer-score">24</span>
+            <span class="computer-score">0</span>
           </p>
         </div>
         <div class="game__computer-side">
           <div class="game__player-icon"><i class="fa-solid fa-robot"></i></div>
           <div class="game__buttons">
-            <div class="game__choice-btn game__choice-btn--computer">
+            <div class="game__choice-btn game__choice-btn--computer computer-rock">
               <i class="fa-solid fa-hand-back-fist fa-flip-horizontal"></i>
             </div>
-            <div class="game__choice-btn game__choice-btn--computer">
+            <div class="game__choice-btn game__choice-btn--computer computer-paper">
               <i class="fa-solid fa-hand fa-flip-horizontal"></i>
             </div>
-            <div class="game__choice-btn game__choice-btn--computer">
+            <div class="game__choice-btn game__choice-btn--computer computer-scissors">
               <i class="fa-solid fa-hand-scissors"></i>
             </div>
           </div>
@@ -58,7 +58,7 @@
       </div>
     </div>
     <footer class="footer">
-      <p>Made without any <span class="emoji" id="paper-emoji">📃</span> or <span class="emoji" id="scissors-emoji">✂️</span>, a practice project by <span class="credit-name">iliAsghar</span></p>
+      <p>Made without any <span class="emoji" data-move="paper"="" id="paper-emoji">📃</span> or <span class="emoji" data-move="scissors" id="scissors-emoji">✂️</span>, a practice project by <span class="credit-name">iliAsghar</span></p>
       <div class="links">
         <a href="https://github.com/iliAsghar"><i class="fa-brands fa-github"></i></a>
         <a href="www.linkedin.com/in/aliasghar-zare-36703826a"><i class="fa-brands fa-linkedin"></i></a>

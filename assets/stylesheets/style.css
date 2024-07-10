@@ -80,6 +80,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
   flex: 1;
   background-color: rgb(156, 225, 156);
   padding: 5rem 3rem;
@@ -172,8 +173,7 @@ body {
   box-shadow: 1px 3px rgb(8, 24, 14);
 }
 
-.game__choice-btn--player:active,
-.game__choice-btn--computer:active {
+.active {
   background-color: rgb(202, 222, 202);
   box-shadow: 0 1px rgb(8, 24, 14);
   translate: 0 4px;
@@ -192,6 +192,8 @@ body {
 .game__result p {
   background-color: white;
   padding: 1rem 2rem;
+  width: max(calc(20vw + 1rem) , 17rem);
+  text-align: center;
   border-radius: 15px;
   box-shadow: 0 1.5px rgb(8, 24, 14);
 }
