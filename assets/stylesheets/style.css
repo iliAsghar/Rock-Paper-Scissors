@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=Playwrite+HU:wght@100..400&display=swap');
 
 body {
-  max-height: 100%;
+  /* max-height: 100%; */
   position: relative;
 }
 
@@ -29,6 +29,20 @@ body {
   color: white;
   text-shadow: 0px -4px 4px rgba(0, 0, 0, 0.164);
   user-select: none;
+}
+
+.container {
+  min-height: 110dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: rgb(156, 225, 156);
 }
 
 .board__start-btn {
@@ -64,6 +78,9 @@ body {
 
 .game {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
   background-color: rgb(156, 225, 156);
   padding: 5rem 3rem;
 }
@@ -72,6 +89,7 @@ body {
 .game__computer-side {
   display: flex;
   flex: 2;
+  gap: 2rem;
 }
 
 .game__computer-side {
@@ -142,7 +160,7 @@ body {
 
 .game__choice-btn--player {
   cursor: pointer;
-  box-shadow: -1px 3px black;
+  box-shadow: -1px 3px rgb(8, 24, 14);
 }
 
 .game__choice-btn--player:hover {
@@ -151,13 +169,13 @@ body {
 
 .game__choice-btn--computer {
   cursor:no-drop;
-  box-shadow: 1px 3px black;
+  box-shadow: 1px 3px rgb(8, 24, 14);
 }
 
 .game__choice-btn--player:active,
 .game__choice-btn--computer:active {
   background-color: rgb(202, 222, 202);
-  box-shadow: none;
+  box-shadow: 0 1px rgb(8, 24, 14);
   translate: 0 4px;
 }
 
@@ -175,7 +193,7 @@ body {
   background-color: white;
   padding: 1rem 2rem;
   border-radius: 15px;
-  box-shadow: 0 2px rgb(54, 81, 49);
+  box-shadow: 0 1.5px rgb(8, 24, 14);
 }
 
 .footer {
@@ -190,6 +208,9 @@ body {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  user-select: none;
+  /* flex: 1; */
+  height: 10rem;
 }
 
 .footer .credit-name {
@@ -210,6 +231,16 @@ body {
   color: rgb(156, 225, 156);
 }
 
+.emoji {
+  display: inline-block;
+  cursor: pointer;
+  transition: all ease-in-out 200ms;
+}
+
+.emoji:hover {
+  transform: translateY(-5px);
+}
+
 @media (max-width: 800px) {
   .game {
     flex-direction: column;
@@ -221,10 +252,10 @@ body {
   }
 
   .game__choice-btn--player {
-    box-shadow: 1px 3px black;
+    box-shadow: 1px 3px rgb(8, 24, 14);
   }
   
   .game__choice-btn--computer {
-    box-shadow: -.25px 3px black;
+    box-shadow: -.25px 3px rgb(8, 24, 14);
   }
 }

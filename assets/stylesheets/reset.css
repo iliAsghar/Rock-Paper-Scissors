@@ -1,6 +1,7 @@
 /* From www.joshwcomeau.com */
 :root {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 /*
   1. Use a more-intuitive box-sizing model.
