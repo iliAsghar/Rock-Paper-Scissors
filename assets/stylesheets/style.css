@@ -65,7 +65,7 @@ body {
 .game {
   display: flex;
   background-color: rgb(156, 225, 156);
-  height: 100dvh; /* todo minus header size*/
+  padding: 5rem 3rem;
 }
 
 .game__player-side,
@@ -76,6 +76,52 @@ body {
 
 .game__computer-side {
   flex-direction: row-reverse;
+}
+
+.game__player-icon {
+  color: rgb(241, 238, 238);
+  font-size: 10rem;
+  flex: 1;
+  display: grid;
+  place-items: center;
+}
+
+.game__player-icon i {
+  transform: scaleY(.95);
+  transition: all ease-in-out 200ms;
+}
+
+.game__computer-side .game__player-icon i {
+  text-shadow: 0 -2px rgb(8, 24, 14),
+              -1px -2px rgb(8, 24, 14);
+}
+
+.game__player-side .game__player-icon i {
+  text-shadow: 0 -2px rgb(8, 24, 14),
+              1px -2px rgb(8, 24, 14);
+}
+
+
+.game__player-icon i:hover {
+  transform: translateY(-5px);
+  color: rgb(255, 255, 255);
+}
+
+.game__player-side .game__player-icon i:hover {
+  text-shadow: -1px 2px rgb(8, 24, 14);
+}
+
+.game__computer-side .game__player-icon i:hover {
+  text-shadow: 1px 2px rgb(8, 24, 14);
+}
+
+.game__buttons {
+  flex: 1;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .game__choice-btn {
@@ -96,35 +142,23 @@ body {
 
 .game__choice-btn--player {
   cursor: pointer;
+  box-shadow: -1px 3px black;
 }
 
 .game__choice-btn--player:hover {
-  background-color: red;
+  background-color: rgb(229, 240, 228);
 }
 
-.player-icon {
-  color: white;
-  font-size: 10rem;
-  flex: 1;
-  display: grid;
-  place-items: center;
-}
-
-.buttons {
-  flex: 1;
-  display: flex;
-  gap: 2rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.game__choice-btn--player:active,
+.game__choice-btn--computer:active {
+  background-color: rgb(202, 222, 202);
+  box-shadow: none;
+  translate: 0 4px;
 }
 
 .game__choice-btn--computer {
   cursor:no-drop;
-}
-
-.game__choice-btn--computer:hover {
-  box-shadow: 0 0 10px 5px red;
+  box-shadow: 1px 3px black;
 }
 
 .game__result {
@@ -135,4 +169,36 @@ body {
   font-size: max(calc(1rem + 4vw) , 4rem);
   font-weight: bold;
   user-select: none;
+}
+
+.footer {
+  background-color: rgb(36, 49, 37);
+  padding: 1rem 4rem;
+  text-align: center;
+  font-family: "Acme";
+  color: white;
+  font-size: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer .credit-name {
+  color: rgb(124, 221, 124);
+}
+
+.footer .links {
+  display: flex;
+  gap: .5rem;
+}
+
+.footer a {
+  color: inherit;
+  font-size: 2.5rem;
+}
+
+.footer a:hover {
+  color: rgb(156, 225, 156);
 }
