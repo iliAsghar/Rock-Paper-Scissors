@@ -9,7 +9,7 @@ body {
 }
 
 .hero {
-  height: 90dvh;
+  min-height: 90dvh;
 
   background: #649173;
   background: -webkit-linear-gradient(to bottom, #DBD5A4, #649173);
@@ -23,7 +23,7 @@ body {
 
 .hero__title {
   font-family: "Playwrite HU";
-  font-size: clamp(6rem, 11vw + 1rem, 10rem);
+  font-size: clamp(6rem, 2rem, 10rem);
   font-weight: bold;
   text-align: center;
   color: white;
@@ -57,7 +57,7 @@ body {
   /* text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.789); */
 
   width: 100%;
-  height: 10dvh;
+  min-height: 10dvh;
   /* position: absolute; */
   /* top: 1.5rem;
   left: 50%;
@@ -120,18 +120,16 @@ body {
               1px -2px rgb(8, 24, 14);
 }
 
-
-.game__player-icon i:hover {
+.turn-active-player i {
+  text-shadow: -1px 2px rgb(8, 24, 14) !important; 
   transform: translateY(-5px);
   color: rgb(255, 255, 255);
 }
 
-.game__player-side .game__player-icon i:hover {
-  text-shadow: -1px 2px rgb(8, 24, 14);
-}
-
-.game__computer-side .game__player-icon i:hover {
-  text-shadow: 1px 2px rgb(8, 24, 14);
+.turn-active-computer i {
+  text-shadow: 1px 2px rgb(8, 24, 14) !important;
+  transform: translateY(-5px);
+  color: rgb(255, 255, 255);
 }
 
 .game__buttons {
@@ -147,7 +145,7 @@ body {
   font-size: clamp(4rem, 10vw, 10rem);
 
   background-color: white;
-  width: clamp(4rem ,15vw ,15rem);
+  width: clamp(4rem ,18vw ,15rem);
   aspect-ratio: 1/1;
   border-radius: 100%;
   outline: none;
@@ -173,7 +171,7 @@ body {
   box-shadow: 1px 3px rgb(8, 24, 14);
 }
 
-.active {
+.btn-active {
   background-color: rgb(202, 222, 202);
   box-shadow: 0 1px rgb(8, 24, 14);
   translate: 0 4px;
@@ -243,6 +241,10 @@ body {
   transform: translateY(-5px);
 }
 
+.emoji:active {
+  transform: translateY(-2px);
+}
+
 @media (max-width: 800px) {
   .game {
     flex-direction: column;
@@ -260,4 +262,33 @@ body {
   .game__choice-btn--computer {
     box-shadow: -.25px 3px rgb(8, 24, 14);
   }
+}
+
+@media (max-width: 500px) {
+  .game__player-side {
+    flex-direction: column;
+  }
+  
+  .game__computer-side {
+    flex-direction: column-reverse;
+  }
+
+  .game__choice-btn {
+    box-shadow: 0 2px black;
+  }
+
+  .game__player-icon i {
+    text-shadow: 0 1px black !important;
+  }
+
+  .turn-active-player i,
+  .turn-active-computer i {
+    text-shadow: 0 3px black !important;
+  }
+}
+
+.btn-active {
+  background-color: rgb(202, 222, 202);
+  box-shadow: 0 1px rgb(8, 24, 14);
+  translate: 0 4px;
 }

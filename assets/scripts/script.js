@@ -1,5 +1,5 @@
 "use strict";
-import { runRPS } from "./rock-paper-scissors.js";
+import { runRPS , isPlayerTurn } from "./rock-paper-scissors.js";
 
 const startBtn = document.querySelector('.board__start-btn');
 
@@ -11,16 +11,18 @@ const playerBtns = document.querySelectorAll('.game__choice-btn--player');
 
 playerBtns.forEach(element => {
   element.addEventListener('click',() => {
-    element.classList.add('active');
-    runRPS(element.dataset.move);
+    if(isPlayerTurn){
+      element.classList.add('btn-active');
+      runRPS(element.dataset.move);
+    }
   })
 })
 
 document.querySelectorAll('.emoji').forEach(emoji => {
   emoji.addEventListener('click',() => {
     playerBtns.forEach((playerBtn) => {
-      if(playerBtn.dataset.move === emoji.dataset.move){
-        playerBtn.classList.add('active');
+      if(playerBtn.dataset.move === emoji.dataset.move && isPlayerTurn){
+        playerBtn.classList.add('btn-active');
         runRPS(playerBtn.dataset.move);
       }
     })

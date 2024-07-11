@@ -9,7 +9,29 @@ let totalPoints = {
   computerPoints: 0
 };
 
+const playerTurnInd = document.querySelector('.player-icon');
+const computerTurnInd = document.querySelector('.computer-icon');
+
+export let isPlayerTurn = 1;
+let endTurn;
+let newTurn;
+function changeTurn(){
+  isPlayerTurn = !isPlayerTurn;
+
+  if(!isPlayerTurn){
+    endTurn = playerTurnInd;
+    newTurn = computerTurnInd;
+  } else{
+    endTurn = computerTurnInd;
+    newTurn = playerTurnInd;
+  }
+  
+  endTurn.classList.remove(`turn-active-${endTurn.dataset.player}`);
+  newTurn.classList.add(`turn-active-${newTurn.dataset.player}`);
+}
+
 export function runRPS(playerMoveName){
+  changeTurn();
   let playerMove = allMoves.find(moveObj => {return moveObj.move === playerMoveName});
   if(!playerMove){
     alert('Invalid Player Move!');
@@ -23,8 +45,9 @@ export function runRPS(playerMoveName){
     setTimeout(() => {
       updateScoreBoard();
       resetChoices();
-    }, 1000);
-  }, Math.floor(Math.random() * 4000) + 750);
+      changeTurn();
+    }, 2000);
+  }, Math.floor(Math.random() * 1000) + 500);
 
 }
 
@@ -64,11 +87,11 @@ const computerMoveElements = {
 }
 
 function initiateComputerMove(computerMove){
-  computerMoveElements[computerMove].classList.toggle('active');
+  computerMoveElements[computerMove].classList.toggle('btn-active');
 }
 
 function resetChoices() {
-  document.querySelectorAll('.active').forEach(element => {
-    element.classList.remove('active')
+  document.querySelectorAll('.btn-active').forEach(element => {
+    element.classList.remove('btn-active')
   })
 }

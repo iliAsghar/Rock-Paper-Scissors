@@ -21,7 +21,7 @@
       <button class="board__start-btn">▼Start Game▼</button>
       <div class="game">
         <div class="game__player-side">
-          <div class="game__player-icon"><i class="fa-solid fa-user"></i></div>
+          <div data-player="player" class="game__player-icon player-icon turn-active-player"><i class="fa-solid fa-user"></i></div>
           <div class="game__buttons">
             <button data-move="rock" class="game__choice-btn game__choice-btn--player">
               <i class="fa-solid fa-hand-back-fist"></i>
@@ -42,7 +42,7 @@
           </p>
         </div>
         <div class="game__computer-side">
-          <div class="game__player-icon"><i class="fa-solid fa-robot"></i></div>
+          <div data-player="computer" class="game__player-icon computer-icon"><i class="fa-solid fa-robot"></i></div>
           <div class="game__buttons">
             <div class="game__choice-btn game__choice-btn--computer computer-rock">
               <i class="fa-solid fa-hand-back-fist fa-flip-horizontal"></i>
