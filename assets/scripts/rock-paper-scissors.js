@@ -30,6 +30,7 @@ function changeTurn(){
   newTurn.classList.add(`turn-active-${newTurn.dataset.player}`);
 }
 
+const popEffect = document.querySelector('.pop-sound');
 export function runRPS(playerMoveName){
   changeTurn();
   let playerMove = allMoves.find(moveObj => {return moveObj.move === playerMoveName});
@@ -46,8 +47,9 @@ export function runRPS(playerMoveName){
       updateScoreBoard();
       resetChoices();
       changeTurn();
-    }, 2000);
-  }, Math.floor(Math.random() * 1000) + 500);
+      popEffect.play();
+    }, 1500);
+  }, Math.floor(Math.random() * 750) + 500);
 
 }
 
