@@ -29,4 +29,4 @@ this was a good learning opportunity since i am learning JS . this practice help
 for future developments, i would like to have a 'TBBT' version of it :D (Rock, Paper, Scissors, Lizard, Spock)
 
 ## Author
-- AliAsgharZare (iliAsghar)
+- iliAsghar
